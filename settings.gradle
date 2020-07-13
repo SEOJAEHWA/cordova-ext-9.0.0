@@ -1,0 +1,3 @@
+include ':CordovaLibExt'
+include ':app'
+rootProject.name = "EmbedCordova"
