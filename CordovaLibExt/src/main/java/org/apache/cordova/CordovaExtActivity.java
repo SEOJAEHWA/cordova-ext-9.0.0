@@ -70,7 +70,7 @@ public class CordovaExtActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(kr.co.aiblab.cordovalibext.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         mFragmentContainer = findViewById(R.id.fragment_container);
     }
 

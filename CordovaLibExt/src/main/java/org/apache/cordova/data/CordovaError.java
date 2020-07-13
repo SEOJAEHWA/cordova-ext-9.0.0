@@ -7,12 +7,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class CordovaError {
 
+    @SuppressWarnings("unused")
     @SerializedName("code")
     private int code;
 
+    @SuppressWarnings("unused")
     @SerializedName("message")
     private String message;
 
+    @SuppressWarnings("unused")
     @SerializedName("data")
     private JsonElement data;
 
@@ -24,7 +27,7 @@ public class CordovaError {
     private CordovaError(int code, String message, String data) {
         this.code = code;
         this.message = message;
-        JsonElement parser = new JsonParser().parse(data);
+        JsonElement parser = JsonParser.parseString(data);
         if (parser.isJsonObject() || parser.isJsonArray()) {
             this.data = parser;
         } else {
@@ -32,6 +35,7 @@ public class CordovaError {
         }
     }
 
+    @SuppressWarnings("unused")
     public static String getCordovaError(int code) {
         return getCordovaError(code, "");
     }

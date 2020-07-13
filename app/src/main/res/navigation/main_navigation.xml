@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/flow_main_dest"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/flow_main_dest"
+        android:name="kr.co.aiblab.embedcordova.MainFragment"
+        tools:layout="@layout/fragment_cordova_ext">
+
+    </fragment>
+</navigation>

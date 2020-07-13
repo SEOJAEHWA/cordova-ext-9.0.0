@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
@@ -79,6 +80,10 @@ public class CordovaExtFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_cordova_ext, container, false);
         cordovaWebViewContainer = root.findViewById(R.id.cordova_webview_container);
         return root;
+    }
+
+    protected WebView getWebView() {
+        return (WebView) appView.getEngine().getView();
     }
 
     protected void init() {

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.apache.cordova.CordovaFragmentActivity">
+    tools:context="org.apache.cordova.CordovaExtActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -16,9 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <!--com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior-->
 
         <!-- Add Fragment in programmatically -->
     </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

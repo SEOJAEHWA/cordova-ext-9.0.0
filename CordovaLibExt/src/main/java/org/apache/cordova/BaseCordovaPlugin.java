@@ -26,7 +26,7 @@ public abstract class BaseCordovaPlugin extends CordovaPlugin {
         this.callback = callbackContext;
 
         if (!execute(args)) {
-            sendErrorCallback(8001, "알 수 없는 플러그인 실행 요청입니다. [" + action + "]");
+            sendErrorCallback(8001, "Unknown plug in is executed. [" + action + "]");
         }
         return true;
     }
