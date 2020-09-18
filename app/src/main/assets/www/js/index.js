@@ -44,3 +44,8 @@ var app = {
 };
 
 app.initialize();
+
+document.getElementById('show_toast').addEventListener('click', function() {
+    var success = function(v) { console.log(v); }, error = function(v) { alert(v); };
+    cordova.plugins.Toast.showToast("blah blah~", success, error);
+});

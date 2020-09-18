@@ -1,4 +1,4 @@
-package kr.co.aiblab.embedcordova
+package kr.co.aiblab.cordova
 
 import org.junit.Test
 

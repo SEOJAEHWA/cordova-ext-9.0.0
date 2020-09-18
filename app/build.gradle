@@ -1,9 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
+
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -20,12 +25,28 @@ android {
         def formattedDate = new Date().format('yyyyMMdd')
         archivesBaseName = "AIBLAB_CORDOVA_${defaultConfig.versionName}_${formattedDate}"
     }
-
     buildTypes {
         release {
             minifyEnabled false
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "LOG_TAG", localProperties["LOG_TAG"]
         }
+        debug {
+            debuggable true
+            buildConfigField "String", "LOG_TAG", localProperties["LOG_TAG"]
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
     kotlinOptions {
         jvmTarget = "1.8"

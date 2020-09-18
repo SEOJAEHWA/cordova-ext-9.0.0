@@ -1,4 +1,4 @@
-package kr.co.aiblab.embedcordova
+package kr.co.aiblab.cordova.ui
 
 import android.os.Bundle
 import android.view.View

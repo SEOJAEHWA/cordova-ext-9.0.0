@@ -1,18 +1,28 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="kr.co.aiblab.embedcordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version='1.0' encoding='utf-8'?><!--suppress XmlUnusedNamespaceDeclaration -->
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0"
+    id="kr.co.aiblab.cordova"
+    version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets">
     <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
+        <param
+            name="android-package"
+            value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param
+            name="onload"
+            value="true" />
     </feature>
     <name>EmbedCordova</name>
     <description>
-        Example of embedded cordova framework on android.
+        Embedded Cordova Example
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author
+        email="aiblab21@gmail.com"
+        href="http://aiblab.co.kr/">
+        AIBLAB
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -20,9 +30,25 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
-    <preference name="loglevel" value="DEBUG" />
-    <preference name="GradlePluginKotlinEnabled" value="true" />
-    <preference name="GradlePluginKotlinCodeStyle" value="official" />
-    <preference name="GradlePluginKotlinVersion" value="1.3.50" />
-    <preference name="AndroidXEnabled" value="true" />
+    <preference
+        name="loglevel"
+        value="DEBUG" />
+    <preference
+        name="GradlePluginKotlinEnabled"
+        value="true" />
+    <preference
+        name="GradlePluginKotlinCodeStyle"
+        value="official" />
+    <preference
+        name="GradlePluginKotlinVersion"
+        value="1.4.10" />
+    <preference
+        name="AndroidXEnabled"
+        value="true" />
+
+    <feature name="Toast">
+        <param
+            name="android-package"
+            value="kr.co.aiblab.cordova.plugin.toast.Toast" />
+    </feature>
 </widget>

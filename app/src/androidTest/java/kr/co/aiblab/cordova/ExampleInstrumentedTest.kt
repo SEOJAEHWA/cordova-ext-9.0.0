@@ -1,4 +1,4 @@
-package kr.co.aiblab.embedcordova
+package kr.co.aiblab.cordova
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

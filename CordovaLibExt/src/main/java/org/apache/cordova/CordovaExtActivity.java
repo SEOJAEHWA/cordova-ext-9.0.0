@@ -18,7 +18,7 @@ import kr.co.aiblab.cordovalibext.R;
 
 public class CordovaExtActivity extends AppCompatActivity {
 
-    public static String TAG = "CordovaFragmentActivity";
+    public static String TAG = "CordovaExtActivity";
 
     // Flag to keep immersive mode if set to fullscreen
     protected boolean immersiveMode;
