@@ -3,6 +3,6 @@
     android:id="@+id/cordova_webview_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.apache.cordova.CordovaExtFragment">
+    tools:context="org.apache.cordova.CordovaFragment">
 
 </FrameLayout>

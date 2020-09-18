@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import org.apache.cordova.engine.SystemWebView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,9 +25,9 @@ import java.util.Locale;
 
 import kr.co.aiblab.cordovalibext.R;
 
-public class CordovaExtFragment extends Fragment {
+public class CordovaFragment extends Fragment {
 
-    private static final String TAG = CordovaExtFragment.class.getSimpleName();
+    private static final String TAG = CordovaFragment.class.getSimpleName();
 
     private static final String ARGS_KEY_URL = "cordova_url";
 
@@ -40,16 +41,16 @@ public class CordovaExtFragment extends Fragment {
     protected ArrayList<PluginEntry> pluginEntries;
     protected CordovaInterfaceImpl cordovaInterface;
 
-    public CordovaExtFragment() {
+    public CordovaFragment() {
         // Required empty public constructor
     }
 
-    public static CordovaExtFragment newInstance() {
+    public static CordovaFragment newInstance() {
         return newInstance(null);
     }
 
-    public static CordovaExtFragment newInstance(String url) {
-        CordovaExtFragment fragment = new CordovaExtFragment();
+    public static CordovaFragment newInstance(String url) {
+        CordovaFragment fragment = new CordovaFragment();
         Bundle args = new Bundle();
         args.putString(ARGS_KEY_URL, url);
         fragment.setArguments(args);
@@ -82,8 +83,8 @@ public class CordovaExtFragment extends Fragment {
         return root;
     }
 
-    protected WebView getWebView() {
-        return (WebView) appView.getEngine().getView();
+    protected WebView getSystemWebView() {
+        return (SystemWebView) appView.getEngine().getView();
     }
 
     protected void init() {
@@ -310,7 +311,7 @@ public class CordovaExtFragment extends Fragment {
             @Override
             public Object onMessage(String id, Object data) {
                 // Plumb this to CordovaActivity.onMessage for backwards compatibility
-                return CordovaExtFragment.this.onMessage(id, data);
+                return CordovaFragment.this.onMessage(id, data);
             }
         };
     }

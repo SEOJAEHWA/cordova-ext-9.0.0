@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import kr.co.aiblab.cordovalibext.R;
 
-public class CordovaExtActivity extends AppCompatActivity {
+public class CordovaFragmentActivity extends AppCompatActivity {
 
     public static String TAG = "CordovaExtActivity";
 
@@ -161,9 +161,9 @@ public class CordovaExtActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        CordovaExtFragment cordovaExtFragment = getCurrentCordovaFragment();
-        if (cordovaExtFragment != null) {
-            cordovaExtFragment.onActivityResult(requestCode, resultCode, data);
+        CordovaFragment cordovaFragment = getCurrentCordovaFragment();
+        if (cordovaFragment != null) {
+            cordovaFragment.onActivityResult(requestCode, resultCode, data);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -171,9 +171,9 @@ public class CordovaExtActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
-        CordovaExtFragment cordovaExtFragment = getCurrentCordovaFragment();
-        if (cordovaExtFragment != null) {
-            cordovaExtFragment.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        CordovaFragment cordovaFragment = getCurrentCordovaFragment();
+        if (cordovaFragment != null) {
+            cordovaFragment.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
@@ -186,10 +186,10 @@ public class CordovaExtActivity extends AppCompatActivity {
      * @author SEOJAEHWA
      */
     @Nullable
-    private CordovaExtFragment findCordovaFragment(final String tag) {
+    private CordovaFragment findCordovaFragment(final String tag) {
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(tag);
-        if (fragment instanceof CordovaExtFragment) {
-            return (CordovaExtFragment) fragment;
+        if (fragment instanceof CordovaFragment) {
+            return (CordovaFragment) fragment;
         }
         return null;
     }
@@ -200,19 +200,19 @@ public class CordovaExtActivity extends AppCompatActivity {
      * @author SEOJAEHWA
      */
     @Nullable
-    private CordovaExtFragment getCurrentCordovaFragment(@IdRes int fragmentContainerViewId) {
+    private CordovaFragment getCurrentCordovaFragment(@IdRes int fragmentContainerViewId) {
         int count = getSupportFragmentManager().getBackStackEntryCount();
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             Fragment fragment = getSupportFragmentManager().findFragmentById(fragmentContainerViewId);
-            if (fragment instanceof CordovaExtFragment) {
-                return (CordovaExtFragment) fragment;
+            if (fragment instanceof CordovaFragment) {
+                return (CordovaFragment) fragment;
             }
         }
         return null;
     }
 
     @Nullable
-    private CordovaExtFragment getCurrentCordovaFragment() {
+    public CordovaFragment getCurrentCordovaFragment() {
         return getCurrentCordovaFragment(mFragmentContainer.getId());
     }
 }

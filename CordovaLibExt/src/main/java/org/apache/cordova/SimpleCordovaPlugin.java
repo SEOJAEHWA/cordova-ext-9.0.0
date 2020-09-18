@@ -8,9 +8,9 @@ import org.apache.cordova.data.CordovaSuccess;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public abstract class BaseCordovaPlugin extends CordovaPlugin {
+public abstract class SimpleCordovaPlugin extends CordovaPlugin {
 
-    private static final String TAG = BaseCordovaPlugin.class.getSimpleName();
+    private static final String TAG = SimpleCordovaPlugin.class.getSimpleName();
 
     private static final int SUCCESS_CODE = 1000;
 
@@ -56,9 +56,9 @@ public abstract class BaseCordovaPlugin extends CordovaPlugin {
         this.callback.error(CordovaError.getCordovaError(code, message, data));
     }
 
-    public CordovaExtActivity getActivity() {
-        if (cordova.getActivity() instanceof CordovaExtActivity) {
-            return (CordovaExtActivity) cordova.getActivity();
+    public CordovaFragmentActivity getActivity() {
+        if (cordova.getActivity() instanceof CordovaFragmentActivity) {
+            return (CordovaFragmentActivity) cordova.getActivity();
         }
         return null;
     }
